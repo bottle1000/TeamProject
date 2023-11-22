@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="icon" href="./favicon.png">
+    <script defer src="./main.js"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    <div class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-content-header">
+                <h2 class="title">여행 가계부</h2>
+                <div class="material-icons">close</div>
+            </div>
+            <div class="modal-content-section">
+                <div class="budget">예산
+                    <span class="budget-input"></span>
+                </div>
+                <div class="expense">총 지출
+                    <span class="expense-result"></span>
+                </div>
+                <div class="left">남은 예산
+                    <span class="left-result"></span>
+                </div>
+            </div>
+            <div class="expenseBtn">
+                <button class="fixedExpenseBtn">고정지출</button>
+                <button class="expectedExpenseBtn">예상지출</button>
+            </div>
+
+            <div class="expenseContent"></div>
+        </div>
+    </div>
+
+    <script>
+        const bgInput = Number(prompt('총 예산을 입력해주세요!'));
+        const $budgetInput = document.querySelector('.budget-input');
+        const $expenseResult = document.querySelector('.expense-result');
+        const $leftResult = document.querySelector('.left-result');
+        const $fixedExpenseBtn = document.querySelector('.fixedExpenseBtn');
+        const $expectedExpenseBtn = document.querySelector('.expectedExpenseBtn');
+        
+
+        // 예산 입력받기
+        if(bgInput >= 1){
+            $budgetInput.textContent = bgInput;
+        } else if (bgInput <= 0){
+            alert('1 이상의 숫자를 입력해주세요! ');
+        } else {
+            alert('숫자만 입력해주세요!')
+        }
+
+        // 고정지출 버튼 클릭하면 고정지출 HTML 추가해주기
+        $fixedExpenseBtn.addEventListener('click', function(){
+            div = document.createElement('div'); 
+            div.className = "fixedExpense";
+            div.innerHTML = `<div><input type:'text' placeholder = '지출 내용 입력'> <input class="fixedExpense-input" type ='number' placeholder = '지출 비용을 입력'></div>`;
+
+            // appendchild를 이용하여 화면 상에 요소를 추가시켜준다.
+            document.getElementsByClassName('expenseContent')[0].appendChild(div);
+        })
+    </script>
+</body>
+</html>

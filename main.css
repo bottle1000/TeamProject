@@ -1,0 +1,91 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .modal-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.modal .modal-content {
+    background-color: white;
+    padding: 20px 10px;
+    text-align: center;
+    position: relative;
+    border-radius: 10px;
+    width: 35%;
+    height: 80%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+/* HEADER */
+
+.modal .modal-content .modal-content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc; /* 섹션과의 구분선을 추가 */
+    padding-bottom: 10px; /* 구분선과 헤더 사이의 간격 조절 */
+}
+.modal .modal-content .modal-content-header h2 {
+    text-align: center;
+    margin: 0 auto; /* 수평 조절로 가운데 정렬 */
+}
+
+.modal .material-icons {
+    cursor: pointer;
+}
+
+
+/* SECTION */
+
+.modal .modal-content-section {
+    height: 150px;
+    /* background-color: salmon; */
+    border-bottom: 1px solid #ccc;
+    font-size: 16px;
+    
+}
+
+.modal .modal-content-section .budget {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal .modal-content-section .expense {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+}
+
+.modal .modal-content-section .left {
+    margin-top: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ExpenseContentSection */
+
+.fixedExpense {
+    text-align: center;
+}
+
+.fixedExpense input {
+    border: 0;
+    border-radius: 15px;
+    outline: none;
+    text-align: center;
+    background-color: rgb(233, 233, 233);
+}
